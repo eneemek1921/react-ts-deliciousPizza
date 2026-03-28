@@ -1,0 +1,28 @@
+
+    .main {
+        display: flex;
+        justify-content: left;
+        margin-left: 1vh;
+        margin-right: 90vh;
+        margin-top: 5vh;
+    }
+
+    .mainContent {
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        background-color: rgb(35, 35, 35);
+        border-radius: 10px;
+    }
+
+    .link {
+        text-decoration: none;
+        color: rgb(170, 170, 170);
+        padding: 20px;
+        font-size: 2rem;
+        transition: all 0.3s ease;
+    }
+
+    .link:hover {
+        color: white;
+    }
