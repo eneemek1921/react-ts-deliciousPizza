@@ -1,0 +1,57 @@
+
+    .main {
+        display: flex;
+        justify-content: center;
+        margin-left: 15vh;
+        margin-right: 15vh;
+        margin-top: 2.5vh;
+    }
+
+    .mainContent {
+        background-color: rgb(150,150,150);
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .productsContent {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 10px;
+        justify-content: center;
+        margin-top: 2.5vh;
+    }
+
+    .productCard {
+        background-color: rgb(230,230,230);
+        width: 300px;
+        height: auto;
+        text-align: center;
+        font-size: 150%;
+        border-radius: 15px;
+    }
+
+    .productSale {
+        color: red;
+        font-family: cursive;
+        font-size: 75%;
+    }
+
+    .filterBtns {
+        display: flex;
+        justify-self: center;
+        gap: 5vh;
+    }
+
+    .filterBtn {
+        background-color: transparent;
+        border: none;
+        color: rgb(230,230,230);
+        font-size: 2rem;
+        transition: all 0.2s ease;
+    }
+
+    .filterBtn:hover {
+        color: black;
+        cursor: pointer;
+    }

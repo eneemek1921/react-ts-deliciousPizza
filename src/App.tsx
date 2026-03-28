@@ -1,12 +1,17 @@
-import { useState } from 'react'
+
 import './App.css'
 import Nav from './components/Nav/Nav'
+import { Route, Routes } from 'react-router-dom'
+import Menu from './pages/Menu/Menu'
 
 function App() {
 
   return (
     <>
-     <Nav />
+      <Nav />
+      <Routes>
+        <Route path="/Menu" element={<Menu />} />
+      </Routes>
     </>
   )
 }
