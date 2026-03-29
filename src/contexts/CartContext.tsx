@@ -9,7 +9,7 @@ export type CartItemType = {
     quantity: number
 }
 
-export type CartProviderType ={
+export type CartProviderType = {
     cart: CartItemType[]
     addToCart: (product: CartItemType) => void
     removeFromCart: (id: number) => void
@@ -72,5 +72,8 @@ export default function CartContextProvider({ children }:{children:ReactNode}) {
 
 export function useCart() {
     const context = useContext(CartContext)
-    if (!context) return
+    if (!context) {
+        throw new Error("useCart must be used within CartContextProvider")
+    }
+    return context
 }

@@ -1,12 +1,14 @@
 import { useMemo, useState } from "react";
 import { products, type ProductsType } from "../../Data/menu";
 import styles from './Menu.module.css'
-
-
+import { useSearchParams } from "react-router-dom";
+import { useCart } from "../../contexts/CartContext";
 
 export default function Menu() {
-    const [selected, setSelected] = useState('all')
-
+    const {addToCart} = useCart()
+    const [searhParams] = useSearchParams()
+    const URLcategory = searhParams.get('category') || 'all'
+    const [selected, setSelected] = useState(URLcategory)
     const filteredProducts = useMemo(() => {
         if (selected === 'all') return products
         return products.filter(product => product.category === selected)
@@ -28,13 +30,13 @@ export default function Menu() {
                 </div>
                 <div className={styles.productsContent}>
                     {filteredProducts.map(product => (
-                    <div key={product.id} className={styles.productCard}>
-                        <h2>{product.title}</h2>
-                        <p>Price: {product.price}$</p>
-                        <p>Category: {product.category}</p>
-                        {product.sale && <p className={styles.productSale}>Sale: {product.sale}%</p> }
-                    </div>
-                ))}
+                        <div key={product.id} className={styles.productCard} onClick={() => addToCart({...product, quantity: 1})}>
+                            <h2 className={styles.productTitle}>{product.title}</h2>
+                            <p className={styles.productPrice}>Price: {product.price}$</p>
+                            <p className={styles.productCategory}>Category: {product.category}</p>
+                            {product.sale && <p className={styles.productSale}>Sale: {product.sale}%</p>}
+                        </div>
+                    ))}
                 </div>
             </section>
         </main>
