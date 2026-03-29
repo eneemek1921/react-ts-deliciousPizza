@@ -1,73 +1,33 @@
-# React + TypeScript + Vite
+Delicious Pizza
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully functional food delivery web app built with React. The project focuses on complex frontend logic, including global cart management, state persistence, and form validation.
 
-Currently, two official plugins are available:
+##Disclaimer
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Created for educational purposes only. Not intended for commercial use.
 
-## React Compiler
+✨ Features
+5 pages — Home, Menu, Cart, Contact
+Product filtering — by category using useMemo for performance optimization
+Global cart — created with useReducer and useContext
+Add/remove products
+Quantity limits (maximum 20 per product)
+Contact form — email and message validation
+🛠️ Tech stack
+React 18 — functional components, hooks
+TypeScript — types
+React Router v6 — routing and navigation
+useReducer — global state management
+react-hook-form — form processing and validation
+CSS modules — component-scoped styling
+CSS variables — consistent styling
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🧠 Key implementation details
+Cart logic — useReducer manages all cart actions (ADD, DELETE, CLEAR) with a quantity limit of 20 products Product
 
-## Expanding the ESLint configuration
+Performance - useMemo prevents unnecessary redraws when filtering by category
+Form Validation - Custom Regular Expressions for Email and Phone Number
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+⏱️ Development Time
+Time spent solely on coding: ~5 hours
+Total (with breaks): 2 days
